@@ -8,8 +8,8 @@
         android:summary="@string/pref_help_about">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.quaap.launchtime"
-            android:targetClass="com.quaap.launchtime.AboutActivity"/>
+            android:targetPackage="biz.aventer.launchtime"
+            android:targetClass="biz.aventer.launchtime.AboutActivity"/>
     </PreferenceScreen>
 
 
@@ -46,8 +46,8 @@
             android:summary="@string/pref_senddat_summ">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:targetPackage="com.quaap.launchtime"
-                android:targetClass="com.quaap.launchtime.FeedbackActivity"/>
+                android:targetPackage="biz.aventer.launchtime"
+                android:targetClass="biz.aventer.launchtime.FeedbackActivity"/>
         </PreferenceScreen>
 
         <PreferenceScreen
@@ -55,8 +55,8 @@
             android:summary="@string/pref_backup_summ">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:targetPackage="com.quaap.launchtime"
-                android:targetClass="com.quaap.launchtime.BackupActivity"/>
+                android:targetPackage="biz.aventer.launchtime"
+                android:targetClass="biz.aventer.launchtime.BackupActivity"/>
         </PreferenceScreen>
 
     </PreferenceCategory>
@@ -68,8 +68,8 @@
             android:title="@string/pref_color_style">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:targetPackage="com.quaap.launchtime"
-                android:targetClass="com.quaap.launchtime.ColorSettingsActivity"/>
+                android:targetPackage="biz.aventer.launchtime"
+                android:targetClass="biz.aventer.launchtime.ColorSettingsActivity"/>
         </PreferenceScreen>
 
 
@@ -83,8 +83,8 @@
             android:summary="@string/pref_customize_desc">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:targetPackage="com.quaap.launchtime"
-                android:targetClass="com.quaap.launchtime.CustomizeLaunchersActivity"/>
+                android:targetPackage="biz.aventer.launchtime"
+                android:targetClass="biz.aventer.launchtime.CustomizeLaunchersActivity"/>
         </PreferenceScreen>
 
         <ListPreference

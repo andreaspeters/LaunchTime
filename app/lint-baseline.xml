@@ -4,11 +4,22 @@
     <issue
         id="DefaultLocale"
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`."
+        errorLine1="      switch (Cat.toLowerCase()) {"
+        errorLine2="                  ~~~~~~~~~~~">
+        <location
+            file="src/main/java/biz/aventer/launchtime/components/Categories.java"
+            line="144"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`."
         errorLine1="            if (srcFile.getName().toLowerCase().endsWith(&quot;.zip&quot;)) {"
         errorLine2="                                  ~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="1344"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="1386"
             column="35"/>
     </issue>
 
@@ -18,7 +29,7 @@
         errorLine1="        return app.getActivityName().toLowerCase().contains(test.toLowerCase())"
         errorLine2="                                     ~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/apps/DefaultApps.java"
+            file="src/main/java/biz/aventer/launchtime/apps/DefaultApps.java"
             line="83"
             column="38"/>
     </issue>
@@ -29,7 +40,7 @@
         errorLine1="        return app.getActivityName().toLowerCase().contains(test.toLowerCase())"
         errorLine2="                                                                 ~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/apps/DefaultApps.java"
+            file="src/main/java/biz/aventer/launchtime/apps/DefaultApps.java"
             line="83"
             column="66"/>
     </issue>
@@ -40,7 +51,7 @@
         errorLine1="                || app.getPackageName().toLowerCase().contains(test.toLowerCase());"
         errorLine2="                                        ~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/apps/DefaultApps.java"
+            file="src/main/java/biz/aventer/launchtime/apps/DefaultApps.java"
             line="84"
             column="41"/>
     </issue>
@@ -51,7 +62,7 @@
         errorLine1="                || app.getPackageName().toLowerCase().contains(test.toLowerCase());"
         errorLine2="                                                                    ~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/apps/DefaultApps.java"
+            file="src/main/java/biz/aventer/launchtime/apps/DefaultApps.java"
             line="84"
             column="69"/>
     </issue>
@@ -62,7 +73,7 @@
         errorLine1="                if (key.toLowerCase().contains(&quot;cat&quot;) || key.equals(Theme.PREFS_UPDATE_KEY)) {"
         errorLine2="                        ~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/MainActivity.java"
+            file="src/main/java/biz/aventer/launchtime/MainActivity.java"
             line="997"
             column="25"/>
     </issue>
@@ -73,8 +84,8 @@
         errorLine1="                            String packagename = app.getPackageName().toLowerCase();"
         errorLine2="                                                                      ~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/MainActivity.java"
-            line="4127"
+            file="src/main/java/biz/aventer/launchtime/MainActivity.java"
+            line="4184"
             column="71"/>
     </issue>
 
@@ -84,7 +95,7 @@
         errorLine1="                registerReceiver(unreadrecv, iu, RECEIVER_EXPORTED);"
         errorLine2="                                                 ~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/GlobState.java"
+            file="src/main/java/biz/aventer/launchtime/GlobState.java"
             line="111"
             column="50"/>
     </issue>
@@ -95,7 +106,7 @@
         errorLine1="                registerReceiver(unreadrecv, iu, RECEIVER_EXPORTED);"
         errorLine2="                                                 ~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/GlobState.java"
+            file="src/main/java/biz/aventer/launchtime/GlobState.java"
             line="114"
             column="50"/>
     </issue>
@@ -106,7 +117,7 @@
         errorLine1="                registerReceiver(unreadrecv, iu, RECEIVER_EXPORTED);"
         errorLine2="                                                 ~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/GlobState.java"
+            file="src/main/java/biz/aventer/launchtime/GlobState.java"
             line="117"
             column="50"/>
     </issue>
@@ -117,7 +128,7 @@
         errorLine1="                registerReceiver(unreadrecv, iu, RECEIVER_EXPORTED);"
         errorLine2="                                                 ~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/GlobState.java"
+            file="src/main/java/biz/aventer/launchtime/GlobState.java"
             line="120"
             column="50"/>
     </issue>
@@ -128,7 +139,7 @@
         errorLine1="                registerReceiver(shortcutrecv, i, RECEIVER_EXPORTED);"
         errorLine2="                                                  ~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/GlobState.java"
+            file="src/main/java/biz/aventer/launchtime/GlobState.java"
             line="127"
             column="51"/>
     </issue>
@@ -139,7 +150,7 @@
         errorLine1="                    int statusresourceId = getResources().getIdentifier(&quot;status_bar_height&quot;, &quot;dimen&quot;, &quot;android&quot;);"
         errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/MainActivity.java"
+            file="src/main/java/biz/aventer/launchtime/MainActivity.java"
             line="1464"
             column="44"/>
     </issue>
@@ -150,7 +161,7 @@
         errorLine1="                    int navresourceId = getResources().getIdentifier(&quot;navigation_bar_height&quot;, &quot;dimen&quot;, &quot;android&quot;);"
         errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/MainActivity.java"
+            file="src/main/java/biz/aventer/launchtime/MainActivity.java"
             line="1469"
             column="41"/>
     </issue>
@@ -161,7 +172,7 @@
         errorLine1="            activityName = cursor.getString(cursor.getColumnIndex(&quot;_id&quot;));"
         errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/apps/AppCursorAdapter.java"
+            file="src/main/java/biz/aventer/launchtime/apps/AppCursorAdapter.java"
             line="143"
             column="45"/>
     </issue>
@@ -172,7 +183,7 @@
         errorLine1="            pkgName = cursor.getString(cursor.getColumnIndex(&quot;pkg&quot;));"
         errorLine2="                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/apps/AppCursorAdapter.java"
+            file="src/main/java/biz/aventer/launchtime/apps/AppCursorAdapter.java"
             line="144"
             column="40"/>
     </issue>
@@ -183,7 +194,7 @@
         errorLine1="            origlabel = cursor.getString(cursor.getColumnIndex(&quot;label&quot;));"
         errorLine2="                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/apps/AppCursorAdapter.java"
+            file="src/main/java/biz/aventer/launchtime/apps/AppCursorAdapter.java"
             line="145"
             column="42"/>
     </issue>
@@ -194,7 +205,7 @@
         errorLine1="            category = cursor.getString(cursor.getColumnIndex(&quot;category&quot;));"
         errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/apps/AppCursorAdapter.java"
+            file="src/main/java/biz/aventer/launchtime/apps/AppCursorAdapter.java"
             line="146"
             column="41"/>
     </issue>
@@ -205,7 +216,7 @@
         errorLine1="            customlabel = cursor.getString(cursor.getColumnIndex(&quot;customlabel&quot;));"
         errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/apps/AppCursorAdapter.java"
+            file="src/main/java/biz/aventer/launchtime/apps/AppCursorAdapter.java"
             line="147"
             column="44"/>
     </issue>
@@ -216,7 +227,7 @@
         errorLine1="        String activityName = cursor.getString(cursor.getColumnIndex(&quot;_id&quot;));"
         errorLine2="                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/apps/AppCursorAdapter.java"
+            file="src/main/java/biz/aventer/launchtime/apps/AppCursorAdapter.java"
             line="192"
             column="48"/>
     </issue>
@@ -227,7 +238,7 @@
         errorLine1="        String pkgName = cursor.getString(cursor.getColumnIndex(&quot;pkg&quot;));"
         errorLine2="                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/apps/AppCursorAdapter.java"
+            file="src/main/java/biz/aventer/launchtime/apps/AppCursorAdapter.java"
             line="193"
             column="43"/>
     </issue>
@@ -238,7 +249,7 @@
         errorLine1="                String actv = cursor.getString(cursor.getColumnIndex(ACTVNAME));"
         errorLine2="                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
             line="287"
             column="48"/>
     </issue>
@@ -249,7 +260,7 @@
         errorLine1="                String pkg = cursor.getString(cursor.getColumnIndex(PKGNAME));"
         errorLine2="                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
             line="288"
             column="47"/>
     </issue>
@@ -260,7 +271,7 @@
         errorLine1="                String label = cursor.getString(cursor.getColumnIndex(LABEL));"
         errorLine2="                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
             line="314"
             column="49"/>
     </issue>
@@ -271,7 +282,7 @@
         errorLine1="                String catID = cursor.getString(cursor.getColumnIndex(CATID));"
         errorLine2="                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
             line="315"
             column="49"/>
     </issue>
@@ -282,7 +293,7 @@
         errorLine1="                boolean widget = cursor.getShort(cursor.getColumnIndex(ISWIDGET)) == 1;"
         errorLine2="                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
             line="316"
             column="50"/>
     </issue>
@@ -293,7 +304,7 @@
         errorLine1="                String customlabel = cursor.getString(cursor.getColumnIndex(CUSTOMLABEL));"
         errorLine2="                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
             line="317"
             column="55"/>
     </issue>
@@ -304,8 +315,8 @@
         errorLine1="                String customlabel = cursor.getString(cursor.getColumnIndex(CUSTOMLABEL));"
         errorLine2="                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="336"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="378"
             column="55"/>
     </issue>
 
@@ -315,8 +326,8 @@
         errorLine1="                String actvname = cursor.getString(cursor.getColumnIndex(ACTVNAME));"
         errorLine2="                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="357"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="399"
             column="52"/>
     </issue>
 
@@ -326,8 +337,8 @@
         errorLine1="                String label = cursor.getString(cursor.getColumnIndex(LABEL));"
         errorLine2="                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="359"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="401"
             column="49"/>
     </issue>
 
@@ -337,8 +348,8 @@
         errorLine1="                String catID = cursor.getString(cursor.getColumnIndex(CATID));"
         errorLine2="                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="360"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="402"
             column="49"/>
     </issue>
 
@@ -348,8 +359,8 @@
         errorLine1="                boolean widget = cursor.getShort(cursor.getColumnIndex(ISWIDGET)) == 1;"
         errorLine2="                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="361"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="403"
             column="50"/>
     </issue>
 
@@ -359,8 +370,8 @@
         errorLine1="                String customlabel = cursor.getString(cursor.getColumnIndex(CUSTOMLABEL));"
         errorLine2="                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="362"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="404"
             column="55"/>
     </issue>
 
@@ -370,8 +381,8 @@
         errorLine1="                catID = cursor.getString(cursor.getColumnIndex(CATID));"
         errorLine2="                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="385"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="427"
             column="42"/>
     </issue>
 
@@ -381,8 +392,8 @@
         errorLine1="                installed = cursor.getShort(cursor.getColumnIndex(ISUNINSTALLED)) != 1;"
         errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="403"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="445"
             column="45"/>
     </issue>
 
@@ -392,8 +403,8 @@
         errorLine1="                String actv = cursor.getString(cursor.getColumnIndex(ACTVNAME));"
         errorLine2="                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="436"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="478"
             column="48"/>
     </issue>
 
@@ -403,8 +414,8 @@
         errorLine1="                String pkg = cursor.getString(cursor.getColumnIndex(PKGNAME));"
         errorLine2="                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="437"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="479"
             column="47"/>
     </issue>
 
@@ -414,8 +425,8 @@
         errorLine1="                String label = cursor.getString(cursor.getColumnIndex(LABEL));"
         errorLine2="                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="438"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="480"
             column="49"/>
     </issue>
 
@@ -425,8 +436,8 @@
         errorLine1="                boolean widget = cursor.getShort(cursor.getColumnIndex(ISWIDGET)) == 1;"
         errorLine2="                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="439"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="481"
             column="50"/>
     </issue>
 
@@ -436,8 +447,8 @@
         errorLine1="                String customlabel = cursor.getString(cursor.getColumnIndex(CUSTOMLABEL));"
         errorLine2="                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="440"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="482"
             column="55"/>
     </issue>
 
@@ -447,8 +458,8 @@
         errorLine1="                String cat = cursor.getString(cursor.getColumnIndex(CATID));"
         errorLine2="                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="782"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="824"
             column="47"/>
     </issue>
 
@@ -458,8 +469,8 @@
         errorLine1="                display = cursor.getString(cursor.getColumnIndex(LABEL));"
         errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="802"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="844"
             column="44"/>
     </issue>
 
@@ -469,8 +480,8 @@
         errorLine1="                display = cursor.getString(cursor.getColumnIndex(LABELFULL));"
         errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="817"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="859"
             column="44"/>
     </issue>
 
@@ -480,8 +491,8 @@
         errorLine1="                tiny = ((cursor.getShort(cursor.getColumnIndex(FLAGS)) &amp; FLAGS_ISTINY) == FLAGS_ISTINY);"
         errorLine2="                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="833"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="875"
             column="42"/>
     </issue>
 
@@ -491,8 +502,8 @@
         errorLine1="                hidden = ((cursor.getShort(cursor.getColumnIndex(FLAGS)) &amp; FLAGS_ISHIDDEN) == FLAGS_ISHIDDEN);"
         errorLine2="                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="852"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="894"
             column="44"/>
     </issue>
 
@@ -502,8 +513,8 @@
         errorLine1="                    actvnames.add(new ComponentName(cursor.getString(cursor.getColumnIndex(PKGNAME)), cursor.getString(cursor.getColumnIndex(ACTVNAME))));"
         errorLine2="                                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="985"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="1027"
             column="70"/>
     </issue>
 
@@ -513,8 +524,8 @@
         errorLine1="                    actvnames.add(new ComponentName(cursor.getString(cursor.getColumnIndex(PKGNAME)), cursor.getString(cursor.getColumnIndex(ACTVNAME))));"
         errorLine2="                                                                                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="985"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="1027"
             column="120"/>
     </issue>
 
@@ -524,8 +535,8 @@
         errorLine1="                    ComponentName cn = new ComponentName(cursor.getString(cursor.getColumnIndex(PKGNAME)), cursor.getString(cursor.getColumnIndex(ACTVNAME)));"
         errorLine2="                                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="1054"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="1096"
             column="75"/>
     </issue>
 
@@ -535,8 +546,8 @@
         errorLine1="                    ComponentName cn = new ComponentName(cursor.getString(cursor.getColumnIndex(PKGNAME)), cursor.getString(cursor.getColumnIndex(ACTVNAME)));"
         errorLine2="                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="1054"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="1096"
             column="125"/>
     </issue>
 
@@ -546,8 +557,8 @@
         errorLine1="                    activitynames.add(new ComponentName(cursor.getString(cursor.getColumnIndex(PKGNAME)), cursor.getString(cursor.getColumnIndex(ACTVNAME))));"
         errorLine2="                                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="1082"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="1124"
             column="74"/>
     </issue>
 
@@ -557,8 +568,8 @@
         errorLine1="                    activitynames.add(new ComponentName(cursor.getString(cursor.getColumnIndex(PKGNAME)), cursor.getString(cursor.getColumnIndex(ACTVNAME))));"
         errorLine2="                                                                                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="1082"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="1124"
             column="124"/>
     </issue>
 
@@ -568,8 +579,8 @@
         errorLine1="                catid = cursor.getString(cursor.getColumnIndex(CATID));"
         errorLine2="                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="1156"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="1198"
             column="42"/>
     </issue>
 
@@ -579,8 +590,8 @@
         errorLine1="                catid = cursor.getString(cursor.getColumnIndex(CATID));"
         errorLine2="                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="1178"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="1220"
             column="42"/>
     </issue>
 
@@ -590,8 +601,8 @@
         errorLine1="                String actv = cursor.getString(cursor.getColumnIndex(ACTVNAME));"
         errorLine2="                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="1445"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="1487"
             column="48"/>
     </issue>
 
@@ -601,9 +612,25 @@
         errorLine1="                String pkg = cursor.getString(cursor.getColumnIndex(PKGNAME));"
         errorLine2="                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/db/DB.java"
-            line="1446"
+            file="src/main/java/biz/aventer/launchtime/db/DB.java"
+            line="1488"
             column="47"/>
+    </issue>
+
+    <issue
+        id="SuspiciousIndentation"
+        message="The indentation string here is different from on the previous line (`&quot; &quot;` vs `\t`)"
+        errorLine1="    return getCategoryFromCsv(context, appinfo.packageName);"
+        errorLine2="  ~~">
+        <location
+            file="src/main/java/biz/aventer/launchtime/components/Categories.java"
+            line="133"
+            column="3"/>
+        <location
+            file="src/main/java/biz/aventer/launchtime/components/Categories.java"
+            line="131"
+            column="3"
+            message="Previous line indentation here"/>
     </issue>
 
     <issue
@@ -612,8 +639,8 @@
         errorLine1="            item = (ViewGroup) LayoutInflater.from(mMain).inflate(R.layout.action_menu_entry, null);"
         errorLine2="                                                                                              ~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/ActionMenu.java"
-            line="830"
+            file="src/main/java/biz/aventer/launchtime/ui/ActionMenu.java"
+            line="836"
             column="95"/>
     </issue>
 
@@ -623,7 +650,7 @@
         errorLine1="        ViewGroup item = (ViewGroup) LayoutInflater.from(main).inflate(R.layout.appinfo_view, null);"
         errorLine2="                                                                                              ~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/AppInfo.java"
+            file="src/main/java/biz/aventer/launchtime/ui/AppInfo.java"
             line="48"
             column="95"/>
     </issue>
@@ -634,7 +661,7 @@
         errorLine1="        body = (FrameLayout) LayoutInflater.from(getContext()).inflate(R.layout.color_demo, null);"
         errorLine2="                                                                                            ~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/color/ColorDemo.java"
+            file="src/main/java/biz/aventer/launchtime/color/ColorDemo.java"
             line="45"
             column="93"/>
     </issue>
@@ -645,7 +672,7 @@
         errorLine1="        ViewGroup item = (ViewGroup) LayoutInflater.from(this).inflate(R.layout.widget_size, null);"
         errorLine2="                                                                                             ~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/MainActivity.java"
+            file="src/main/java/biz/aventer/launchtime/MainActivity.java"
             line="1999"
             column="94"/>
     </issue>
@@ -656,7 +683,7 @@
         errorLine1="        mSearchView = (ViewGroup) LayoutInflater.from(mainActivity).inflate(R.layout.search_layout, null);"
         errorLine2="                                                                                                    ~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/SearchBox.java"
+            file="src/main/java/biz/aventer/launchtime/ui/SearchBox.java"
             line="51"
             column="101"/>
     </issue>
@@ -667,7 +694,7 @@
         errorLine1="                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);"
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/MainActivity.java"
+            file="src/main/java/biz/aventer/launchtime/MainActivity.java"
             line="1323"
             column="21"/>
     </issue>
@@ -678,7 +705,7 @@
         errorLine1="            int appfilterid = iconPackres.getIdentifier(&quot;appfilter&quot;, &quot;xml&quot;, iconsPackPackageName);"
         errorLine2="                                          ~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/components/IconPack.java"
+            file="src/main/java/biz/aventer/launchtime/components/IconPack.java"
             line="95"
             column="43"/>
     </issue>
@@ -689,7 +716,7 @@
         errorLine1="                    int id = iconPackres.getIdentifier(value, &quot;drawable&quot;, iconsPackPackageName);"
         errorLine2="                                         ~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/components/IconPack.java"
+            file="src/main/java/biz/aventer/launchtime/components/IconPack.java"
             line="209"
             column="42"/>
     </issue>
@@ -700,7 +727,7 @@
         errorLine1="                int id = iconPackres.getIdentifier(drawable, &quot;drawable&quot;, iconsPackPackageName);"
         errorLine2="                                     ~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/components/IconPack.java"
+            file="src/main/java/biz/aventer/launchtime/components/IconPack.java"
             line="237"
             column="38"/>
     </issue>
@@ -711,7 +738,7 @@
         errorLine1="            int id = iconPackres.getIdentifier(drawableName, &quot;drawable&quot;, iconsPackPackageName);"
         errorLine2="                                 ~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/components/IconPack.java"
+            file="src/main/java/biz/aventer/launchtime/components/IconPack.java"
             line="320"
             column="34"/>
     </issue>
@@ -722,7 +749,7 @@
         errorLine1="                    int statusresourceId = getResources().getIdentifier(&quot;status_bar_height&quot;, &quot;dimen&quot;, &quot;android&quot;);"
         errorLine2="                                                          ~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/MainActivity.java"
+            file="src/main/java/biz/aventer/launchtime/MainActivity.java"
             line="1464"
             column="59"/>
     </issue>
@@ -733,7 +760,7 @@
         errorLine1="                    int navresourceId = getResources().getIdentifier(&quot;navigation_bar_height&quot;, &quot;dimen&quot;, &quot;android&quot;);"
         errorLine2="                                                       ~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/MainActivity.java"
+            file="src/main/java/biz/aventer/launchtime/MainActivity.java"
             line="1469"
             column="56"/>
     </issue>
@@ -744,7 +771,7 @@
         errorLine1="    @TargetApi(Build.VERSION_CODES.O)"
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/PinShortcutActivity.java"
+            file="src/main/java/biz/aventer/launchtime/PinShortcutActivity.java"
             line="32"
             column="5"/>
     </issue>
@@ -755,97 +782,9 @@
         errorLine1="    @TargetApi(Build.VERSION_CODES.O)"
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/PinShortcutActivity.java"
+            file="src/main/java/biz/aventer/launchtime/PinShortcutActivity.java"
             line="82"
             column="5"/>
-    </issue>
-
-    <issue
-        id="ExtraTranslation"
-        message="&quot;category_System&quot; is translated here but not found in default locale"
-        errorLine1="    &lt;string name=&quot;category_System&quot;>System&lt;/string>"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values-de/strings.xml"
-            line="24"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="ExtraTranslation"
-        message="&quot;category_System&quot; is translated here but not found in default locale"
-        errorLine1=" &lt;string name=&quot;category_System&quot;>System&lt;/string>"
-        errorLine2="         ~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values-pt/strings.xml"
-            line="24"
-            column="10"/>
-    </issue>
-
-    <issue
-        id="ExtraTranslation"
-        message="&quot;category_System&quot; is translated here but not found in default locale"
-        errorLine1="    &lt;string name=&quot;category_System&quot;>System&lt;/string>"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values-ja/strings.xml"
-            line="25"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="ExtraTranslation"
-        message="&quot;category_System&quot; is translated here but not found in default locale"
-        errorLine1="    &lt;string name=&quot;category_System&quot;>System&lt;/string>"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values-zh-rCN/strings.xml"
-            line="25"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="ExtraTranslation"
-        message="&quot;category_System&quot; is translated here but not found in default locale"
-        errorLine1="    &lt;string name=&quot;category_System&quot;>System&lt;/string>"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values-es/strings.xml"
-            line="26"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="ExtraTranslation"
-        message="&quot;category_System&quot; is translated here but not found in default locale"
-        errorLine1="    &lt;string name=&quot;category_System&quot;>System&lt;/string>"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values-fr/strings.xml"
-            line="26"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="ExtraTranslation"
-        message="&quot;category_System&quot; is translated here but not found in default locale"
-        errorLine1="    &lt;string name=&quot;category_System&quot;>System&lt;/string>"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values-eo/strings.xml"
-            line="27"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="ExtraTranslation"
-        message="&quot;category_System&quot; is translated here but not found in default locale"
-        errorLine1="    &lt;string name=&quot;category_System&quot;>System&lt;/string>"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values-ru/strings.xml"
-            line="27"
-            column="13"/>
     </issue>
 
     <issue
@@ -865,7 +804,7 @@
         errorLine1="        if (Build.VERSION.SDK_INT >= 24) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/AboutActivity.java"
+            file="src/main/java/biz/aventer/launchtime/AboutActivity.java"
             line="50"
             column="13"/>
     </issue>
@@ -876,7 +815,7 @@
         errorLine1="        mUseActionMenus = mMain.mAppPreferences.getBoolean(mMain.getString(R.string.pref_key_show_action_menus), Build.VERSION.SDK_INT >= 25);"
         errorLine2="                                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/ActionMenu.java"
+            file="src/main/java/biz/aventer/launchtime/ui/ActionMenu.java"
             line="100"
             column="114"/>
     </issue>
@@ -887,7 +826,7 @@
         errorLine1="            mUseExtraActions = mMain.mAppPreferences.getBoolean(mMain.getString(R.string.pref_key_show_action_extra), Build.VERSION.SDK_INT >= 25);"
         errorLine2="                                                                                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/ActionMenu.java"
+            file="src/main/java/biz/aventer/launchtime/ui/ActionMenu.java"
             line="103"
             column="119"/>
     </issue>
@@ -898,8 +837,8 @@
         errorLine1="        if (Build.VERSION.SDK_INT >= 25) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/ActionMenu.java"
-            line="699"
+            file="src/main/java/biz/aventer/launchtime/ui/ActionMenu.java"
+            line="705"
             column="13"/>
     </issue>
 
@@ -909,8 +848,8 @@
         errorLine1="                if (Build.VERSION.SDK_INT >= 25) {"
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/ActionMenu.java"
-            line="726"
+            file="src/main/java/biz/aventer/launchtime/ui/ActionMenu.java"
+            line="732"
             column="21"/>
     </issue>
 
@@ -920,8 +859,8 @@
         errorLine1="        if (Build.VERSION.SDK_INT>=25) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/ActionMenu.java"
-            line="737"
+            file="src/main/java/biz/aventer/launchtime/ui/ActionMenu.java"
+            line="743"
             column="13"/>
     </issue>
 
@@ -931,8 +870,8 @@
         errorLine1="        if (Build.VERSION.SDK_INT>=25) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/ActionMenu.java"
-            line="899"
+            file="src/main/java/biz/aventer/launchtime/ui/ActionMenu.java"
+            line="905"
             column="13"/>
     </issue>
 
@@ -942,8 +881,8 @@
         errorLine1="                            if (Build.VERSION.SDK_INT >= 25) {"
         errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/ActionMenu.java"
-            line="916"
+            file="src/main/java/biz/aventer/launchtime/ui/ActionMenu.java"
+            line="922"
             column="33"/>
     </issue>
 
@@ -953,7 +892,7 @@
         errorLine1="            if (Build.VERSION.SDK_INT >= 28) {"
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/AppInfo.java"
+            file="src/main/java/biz/aventer/launchtime/ui/AppInfo.java"
             line="77"
             column="17"/>
     </issue>
@@ -964,7 +903,7 @@
         errorLine1="            if (Build.VERSION.SDK_INT >= 26) {"
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/AppInfo.java"
+            file="src/main/java/biz/aventer/launchtime/ui/AppInfo.java"
             line="95"
             column="17"/>
     </issue>
@@ -975,7 +914,7 @@
         errorLine1="        if (Build.VERSION.SDK_INT >= 26) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/AppInfo.java"
+            file="src/main/java/biz/aventer/launchtime/ui/AppInfo.java"
             line="242"
             column="13"/>
     </issue>
@@ -986,8 +925,8 @@
         errorLine1="        if (Build.VERSION.SDK_INT >= 26) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/components/Categories.java"
-            line="269"
+            file="src/main/java/biz/aventer/launchtime/components/Categories.java"
+            line="336"
             column="13"/>
     </issue>
 
@@ -997,7 +936,7 @@
         errorLine1="        if (Build.VERSION.SDK_INT >= 24) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/color/ColorChooser.java"
+            file="src/main/java/biz/aventer/launchtime/color/ColorChooser.java"
             line="190"
             column="13"/>
     </issue>
@@ -1008,7 +947,7 @@
         errorLine1="        if (Build.VERSION.SDK_INT >= 25) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/GlobState.java"
+            file="src/main/java/biz/aventer/launchtime/GlobState.java"
             line="91"
             column="13"/>
     </issue>
@@ -1019,7 +958,7 @@
         errorLine1="                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {"
         errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/components/IconPack.java"
+            file="src/main/java/biz/aventer/launchtime/components/IconPack.java"
             line="240"
             column="29"/>
     </issue>
@@ -1030,7 +969,7 @@
         errorLine1="                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {"
         errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/components/IconPack.java"
+            file="src/main/java/biz/aventer/launchtime/components/IconPack.java"
             line="325"
             column="25"/>
     </issue>
@@ -1041,7 +980,7 @@
         errorLine1="                    if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {"
         errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/components/IconsHandler.java"
+            file="src/main/java/biz/aventer/launchtime/components/IconsHandler.java"
             line="176"
             column="25"/>
     </issue>
@@ -1052,7 +991,7 @@
         errorLine1="                if (Build.VERSION.SDK_INT >= 21) {"
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/components/IconsHandler.java"
+            file="src/main/java/biz/aventer/launchtime/components/IconsHandler.java"
             line="406"
             column="21"/>
     </issue>
@@ -1063,7 +1002,7 @@
         errorLine1="        if (Build.VERSION.SDK_INT >= 26) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/apps/LaunchApp.java"
+            file="src/main/java/biz/aventer/launchtime/apps/LaunchApp.java"
             line="119"
             column="13"/>
     </issue>
@@ -1074,7 +1013,7 @@
         errorLine1="                        .putBoolean(main.getString(R.string.pref_key_show_action_menus), Build.VERSION.SDK_INT >= 25)"
         errorLine2="                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/MainActivity.java"
+            file="src/main/java/biz/aventer/launchtime/MainActivity.java"
             line="461"
             column="90"/>
     </issue>
@@ -1085,7 +1024,7 @@
         errorLine1="                        .putBoolean(main.getString(R.string.pref_key_show_action_extra), Build.VERSION.SDK_INT >= 25)"
         errorLine2="                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/MainActivity.java"
+            file="src/main/java/biz/aventer/launchtime/MainActivity.java"
             line="462"
             column="90"/>
     </issue>
@@ -1096,7 +1035,7 @@
         errorLine1="            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {"
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/MainActivity.java"
+            file="src/main/java/biz/aventer/launchtime/MainActivity.java"
             line="1442"
             column="17"/>
     </issue>
@@ -1107,7 +1046,7 @@
         errorLine1="                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {"
         errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/MainActivity.java"
+            file="src/main/java/biz/aventer/launchtime/MainActivity.java"
             line="1476"
             column="21"/>
     </issue>
@@ -1118,7 +1057,7 @@
         errorLine1="        if (Build.VERSION.SDK_INT>=24) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/MainActivity.java"
+            file="src/main/java/biz/aventer/launchtime/MainActivity.java"
             line="2666"
             column="13"/>
     </issue>
@@ -1129,7 +1068,7 @@
         errorLine1="        if (Build.VERSION.SDK_INT>=24) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/MainActivity.java"
+            file="src/main/java/biz/aventer/launchtime/MainActivity.java"
             line="3131"
             column="13"/>
     </issue>
@@ -1140,7 +1079,7 @@
         errorLine1="    @TargetApi(Build.VERSION_CODES.O)"
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/PinShortcutActivity.java"
+            file="src/main/java/biz/aventer/launchtime/PinShortcutActivity.java"
             line="32"
             column="5"/>
     </issue>
@@ -1151,7 +1090,7 @@
         errorLine1="    @TargetApi(Build.VERSION_CODES.O)"
         errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/PinShortcutActivity.java"
+            file="src/main/java/biz/aventer/launchtime/PinShortcutActivity.java"
             line="82"
             column="5"/>
     </issue>
@@ -1162,7 +1101,7 @@
         errorLine1="                    if (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.O_MR1 || mContext.checkSelfPermission(&quot;android.permission.READ_EXTERNAL_STORAGE&quot;) == PackageManager.PERMISSION_GRANTED) {"
         errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/Style.java"
+            file="src/main/java/biz/aventer/launchtime/ui/Style.java"
             line="360"
             column="25"/>
     </issue>
@@ -1173,7 +1112,7 @@
         errorLine1="                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {"
         errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/Style.java"
+            file="src/main/java/biz/aventer/launchtime/ui/Style.java"
             line="371"
             column="25"/>
     </issue>
@@ -1184,7 +1123,7 @@
         errorLine1="        if (Build.VERSION.SDK_INT >= 23) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/ui/Style.java"
+            file="src/main/java/biz/aventer/launchtime/ui/Style.java"
             line="490"
             column="13"/>
     </issue>
@@ -1195,7 +1134,7 @@
         errorLine1="        if (Build.VERSION.SDK_INT >= 23) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/components/Theme.java"
+            file="src/main/java/biz/aventer/launchtime/components/Theme.java"
             line="249"
             column="13"/>
     </issue>
@@ -1206,7 +1145,7 @@
         errorLine1="        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/widgets/Widget.java"
+            file="src/main/java/biz/aventer/launchtime/widgets/Widget.java"
             line="72"
             column="13"/>
     </issue>
@@ -1217,7 +1156,7 @@
         errorLine1="                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {"
         errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/widgets/Widget.java"
+            file="src/main/java/biz/aventer/launchtime/widgets/Widget.java"
             line="316"
             column="29"/>
     </issue>
@@ -1228,7 +1167,7 @@
         errorLine1="        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/widgets/Widget.java"
+            file="src/main/java/biz/aventer/launchtime/widgets/Widget.java"
             line="436"
             column="13"/>
     </issue>
@@ -1239,7 +1178,7 @@
         errorLine1="        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {"
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/widgets/WidgetsRestoredReceiver.java"
+            file="src/main/java/biz/aventer/launchtime/widgets/WidgetsRestoredReceiver.java"
             line="29"
             column="13"/>
     </issue>
@@ -1250,7 +1189,7 @@
         errorLine1="                AsyncTask&lt;Void, Void, String> sendItAsync = new AsyncTask&lt;Void, Void, String>() {"
         errorLine2="                                                            ^">
         <location
-            file="src/main/java/com/quaap/launchtime/CrashReportActivity.java"
+            file="src/main/java/biz/aventer/launchtime/CrashReportActivity.java"
             line="71"
             column="61"/>
     </issue>
@@ -1312,23 +1251,12 @@
 
     <issue
         id="UnusedResources"
-        message="The resource `R.string.category_System` appears to be unused"
-        errorLine1="    &lt;string name=&quot;category_System&quot;>System&lt;/string>"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/values-de/strings.xml"
-            line="24"
-            column="13"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
         message="The resource `R.string.pref_system` appears to be unused"
         errorLine1="    &lt;string name=&quot;pref_system&quot;>System Settings&lt;/string>"
         errorLine2="            ~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/res/values/strings.xml"
-            line="129"
+            line="141"
             column="13"/>
     </issue>
 
@@ -1339,7 +1267,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/res/values/strings.xml"
-            line="130"
+            line="142"
             column="13"/>
     </issue>
 
@@ -1350,7 +1278,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="src/main/res/values/strings.xml"
-            line="399"
+            line="413"
             column="13"/>
     </issue>
 
@@ -1657,7 +1585,7 @@
         errorLine1="                catnameview.setText(&quot;na&quot;);"
         errorLine2="                                    ~~~~">
         <location
-            file="src/main/java/com/quaap/launchtime/FeedbackActivity.java"
+            file="src/main/java/biz/aventer/launchtime/FeedbackActivity.java"
             line="331"
             column="37"/>
     </issue>
