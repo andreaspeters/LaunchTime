@@ -1,158 +1,110 @@
 #!/usr/bin/perl
-
-# this script makes the git branch and moves/renames the package name for the playstore
-# "Clean Project" and test!
-use warnings;
 use strict;
+use warnings;
+use File::Find;
 use File::Basename;
+use Cwd 'abs_path';
 
+# ------------------ CONFIG / ARGS ------------------
 
-my $gitbranch = "playstore80";
-
+my $gitbranch = "playstore_rename";
 my $from_pack = "com.quaap.launchtime";
-my $to_pack   = "com.quaap.launchtime_official";
+my $to_pack   = "biz.aventer.launchtime";
+my $basedir   = ".";
 
-my $basedir = ".";
+if (@ARGV) {
+    die "Usage: $0 [gitbranch from_package to_package [basedir]]\n"
+        unless @ARGV == 3 || @ARGV == 4;
 
-if (@ARGV>0) {
-
-    if (@ARGV==2 || @ARGV>4) {
-        die "Usage: $0 [gitbranch [from_package to_package [directory]]]";
-    }
-
-    if (@ARGV>=1) {
-        $gitbranch = $ARGV[0];
-    }
-
-    if (@ARGV>=3) {
-        $from_pack = $ARGV[1];
-        $to_pack   = $ARGV[2];
-    }
-
-    if (@ARGV==4) {
-        $basedir =   $ARGV[3];
-        chdir $basedir;
-    }
+    ($gitbranch, $from_pack, $to_pack, $basedir) = @ARGV;
 }
 
-my @java_paths = (
- "app/src/main/java"
+$basedir = abs_path($basedir);
+chdir $basedir or die "Cannot chdir to $basedir: $!";
+
+print "Base dir : $basedir\n";
+print "Branch   : $gitbranch\n";
+print "Rename   : $from_pack  ->  $to_pack\n\n";
+
+# ------------------ SAFETY CHECK ------------------
+
+my @status = `git status -s`;
+die "❌ Git working tree not clean:\n@status\n" if @status;
+
+# ------------------ GIT BRANCH ------------------
+
+system("git checkout -b $gitbranch") == 0
+    or die "❌ Failed to create/switch branch $gitbranch\n";
+
+print "✅ Switched to new branch $gitbranch\n";
+
+# ------------------ PATH CONVERSION ------------------
+
+(my $from_dir = $from_pack) =~ s/\./\//g;
+(my $to_dir   = $to_pack)   =~ s/\./\//g;
+
+# Typical Android source roots
+my @java_roots = (
+    "app/src/main/java",
+    "app/src/main/kotlin"
 );
 
-my @skip = (
-   basename($0),
+for my $root (@java_roots) {
+    next unless -d $root;
 
-   "build",
-   "assets",
-   "captures",
-   ".git",
-   ".idea",
-   ".gradle",
-   "README.md",
-   "packages1.txt",
-   "packages2.txt",
-   "submitted_activities.txt",
-   "submitted_packages.txt"
+    my $old_path = "$root/$from_dir";
+    my $new_path = "$root/$to_dir";
+
+    next unless -d $old_path;
+
+    print "📁 Moving package directory:\n   $old_path\n   -> $new_path\n";
+    system("git mv \"$old_path\" \"$new_path\"") == 0
+        or die "❌ git mv failed\n";
+}
+
+# ------------------ FILE CONTENT REPLACEMENT ------------------
+
+my %skip_dirs = map { $_ => 1 } qw(
+    .git .gradle .idea build captures out
 );
 
+sub wanted {
+    my $file = $File::Find::name;
+    my $base = basename($file);
 
+    # Skip dirs
+    if (-d $file) {
+        if ($skip_dirs{$base}) {
+            $File::Find::prune = 1;
+        }
+        return;
+    }
 
-#Check if there are tracked changes
-my @out = `git status -uno -s`;
+    return unless -T $file;  # text files only
 
-die "git changes found!\n@out\n" if @out>0;
+    open my $in,  '<:utf8', $file or return;
+    my @lines = <$in>;
+    close $in;
 
+    my $changed = 0;
+    for (@lines) {
+        $changed ||= s/\b\Q$from_pack\E\b/$to_pack/g;
+    }
 
-#/**
-# * Copyright (C) 2017   Tom Kliethermes
-# *
-# * This file is part of LaunchTime and is is free software; you can redistribute it and/or
-# * modify it under the terms of the GNU General Public License as published by the
-# * Free Software Foundation; either version 3 of the License, or (at your option) any
-# * later version.
-# *
-# * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
-# * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# * See the GNU General Public License for more details.
-# */
-
-
-
-sub look_dir {
-   my $ldir = shift;
-   opendir D, $ldir;
-   my @subs = readdir(D);
-   closedir(D);
-   
-   for my $file (@subs) {
-      
-      my $ffile = "$ldir/$file";
-
-      #my $repath = $ffile;
-      #$repath=~s{^\Q$basedir\E/?}{};
-      #if ( grep( /^\Q$file\E|\Q$repath\E$/, @skip ) ) { next; }
-      if ( grep( /^\Q$file\E$/, @skip ) ) { next; }
-
-      if (-d $ffile and $file ne "." and $file ne "..") {
-         
-         look_dir($ffile);
-         
-      } elsif (-T $ffile) {
-            print "$ffile\n";
-         open F, '<:utf8', $ffile;
-         my @lines = <F>;
-         close F;
-         
-         my $mod = 0; 
-         for (@lines) {
-            if (s/\b\Q$from_pack\E\b/$to_pack/g) {
-               $mod = 1;
-            }
-         }
-
-         if ($mod) {
-            print "$ffile\n";
-            open F, '>:utf8', $ffile;
-            
-            for my $line (@lines) {
-               print F $line;
-            }
-            close F;
-         }
-      }
-   }
+    if ($changed) {
+        print "✏️  Updated: $file\n";
+        open my $out, '>:utf8', $file or die "Cannot write $file: $!";
+        print $out @lines;
+        close $out;
+    }
 }
 
+print "\n🔍 Replacing package name in files...\n";
+find(\&wanted, $basedir);
 
-my $from_pack_dir = $from_pack;
-my $to_pack_dir = $to_pack;
+print "\n🎉 Done! Package renamed successfully.\n";
+print "👉 Next steps:\n";
+print "   • Invalidate caches / restart IDE\n";
+print "   • Clean & rebuild project\n";
+print "   • Check AndroidManifest.xml applicationId\n";
 
-$from_pack_dir =~ s{\.}{/}g;
-$to_pack_dir =~ s{\.}{/}g;
-
-
-if (system("git branch $gitbranch")!=0) {
-    die "Couldn't make branch $gitbranch";
-}
-print "created branch $gitbranch\n";
-
-if (system("git checkout $gitbranch")!=0) {
-    die "Couldn't checkout branch $gitbranch";
-}
-
-for my $jpath (@java_paths) {
-   my $dir = "$basedir/$jpath";
-
-   if (-d $dir) {
-       my $cmd = qq(git mv "$dir/$from_pack_dir" "$dir/$to_pack_dir");
-       print "$cmd\n";
-       if (system($cmd)!=0) {
-          die "Couldn't $cmd";
-       }
-   }
-   #print("move \"$dir/$from_pack_dir\",\"$dir/$to_pack_dir\"\n");
-   #move("$dir/$from_pack_dir","$dir/$to_pack_dir");
-   #system qq(git mv "$dir/$from_pack_dir" "$dir/$to_pack_dir");
-}
-
-look_dir($basedir);
