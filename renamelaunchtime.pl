@@ -10,8 +10,8 @@ use Cwd 'abs_path';
 # ------------------ ARGUMENTE ------------------
 
 my $gitbranch = "playstore90";
-my $from_pack = "bis.aventer.launchtime";
-my $to_pack   = "bis.aventer.launchtime_official";
+my $from_pack = "com.quapp.launchtime";
+my $to_pack   = "biz.aventer.launchtime_official";
 my $basedir   = ".";
 
 if (@ARGV) {
